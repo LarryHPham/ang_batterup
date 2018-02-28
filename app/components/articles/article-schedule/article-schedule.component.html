@@ -1,0 +1,41 @@
+<div *ngIf="!league" class="schedule">
+    <div class="schedule-next">
+        <div class="schedule-next {{defaultGradient}}" [ngStyle]="fullGradient">
+        </div>
+        <div class="schedule-next-team schedule-next-team-left">
+            <a *ngIf="awayData.url" [routerLink]="awayData.url">
+                <div class="schedule-next-team-left-url">
+                        <span class="schedule-next-team-name">{{awayData.awayLocation}}<span
+                                class="schedule-next-team-name-bold"> {{awayData.awayName}}</span></span>
+                </div>
+            </a>
+            <div *ngIf="!awayData.url" class="schedule-next-team-left">
+                        <span class="schedule-next-team-name">{{awayData.awayLocation}}<span
+                                class="schedule-next-team-name-bold"> {{awayData.awayName}}</span></span>
+            </div>
+            <div class="schedule-next-team-record">Record: <span class="schedule-next-team-record-bold">{{awayData.awayWins}} - {{awayData.awayLosses}}</span>
+            </div>
+        </div>
+        <circle-image *ngIf="awayData.awayLogo" class="schedule-next-circle schedule-next-circle-left"
+                      [data]="awayData.awayLogo"></circle-image>
+        <div class="schedule-next-vs">
+            vs
+        </div>
+        <circle-image *ngIf="homeData.homeLogo" class="schedule-next-circle schedule-next-circle-right"
+                      [data]="homeData.homeLogo"></circle-image>
+        <div class="schedule-next-team schedule-next-team-right">
+            <a *ngIf="homeData.url" [routerLink]="homeData.url">
+                <div class="schedule-next-team-right-url">
+                        <span class="schedule-next-team-name">{{homeData.homeLocation}}<span
+                                class="schedule-next-team-name-bold"> {{homeData.homeName}}</span></span>
+                </div>
+            </a>
+            <div *ngIf="!homeData.url" class="schedule-next-team-right">
+                        <span class="schedule-next-team-name">{{homeData.homeLocation}}<span
+                                class="schedule-next-team-name-bold"> {{homeData.homeName}}</span></span>
+            </div>
+            <div class="schedule-next-team-record">Record: <span class="schedule-next-team-record-bold">{{homeData.homeWins}} - {{homeData.homeLosses}}</span>
+            </div>
+        </div>
+    </div>
+</div>

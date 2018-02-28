@@ -1,0 +1,31 @@
+.widget {
+    width: 300px;
+    height: 600px;
+    background: @white;
+    overflow: hidden;
+    z-index: 100;
+    box-shadow: @modBoxShadow;
+    top: 20px;
+    position: relative;
+
+    &-bottom {
+      position: absolute!important;
+      margin-top: 0!important
+    }
+    &-top {
+      position: fixed;
+      margin-top: 35px;
+    }
+    &-top-up {
+      position: fixed;
+      margin-top: 99px;
+    }
+    &-top-ddp {
+      position: fixed;
+      margin-top: 35px;
+    }
+    &-top-ddp-up {
+      position: fixed;
+      margin-top: 99px;
+    }
+}
